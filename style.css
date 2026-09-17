@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+
+    background: #040008;
+
+    color: #ff0a54;
+
+    font-family:
+        "Consolas",
+        "Courier New",
+        monospace;
+}
+
+
+/* =========================================
+   CANVAS
+========================================= */
+
+#quantumCanvas {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: block;
+
+    background: #040008;
+}
+
+
+/* =========================================
+   HUD
+========================================= */
+
+.hud {
+    position: fixed;
+
+    inset: 0;
+
+    padding: 34px 42px;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 4px rgba(255, 10, 84, 0.75),
+        0 0 12px rgba(255, 10, 84, 0.2);
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title {
+    position: absolute;
+
+    top: 34px;
+    left: 42px;
+
+    color: #ff0a54;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   TELEMETRY
+========================================= */
+
+.telemetry {
+    position: absolute;
+
+    top: 165px;
+    left: 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    color: #f72585;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+}
+
+.label {
+    color: #ff0a54;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   CONTROLES
+========================================= */
+
+.controls {
+    position: absolute;
+
+    bottom: 35px;
+    left: 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    color: #d62c72;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    font-style: italic;
+}
+
+.control-title {
+    color: #ff0a54;
+
+    font-style: normal;
+
+    margin-bottom: 4px;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+    position: fixed;
+
+    top: 38px;
+    right: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    z-index: 20;
+
+    color: #ff0a54;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 6px rgba(255, 10, 84, 0.8);
+}
+
+#statusLight {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #ff0a54;
+
+    box-shadow:
+        0 0 5px #ff0a54,
+        0 0 15px #ff0a54;
+}
+
+
+/* =========================================
+   PAUSA
+========================================= */
+
+.pause-indicator {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 30;
+
+    padding: 15px 24px;
+
+    border:
+        1px solid rgba(255, 10, 84, 0.6);
+
+    background:
+        rgba(4, 0, 8, 0.82);
+
+    color: #ff0a54;
+
+    font-family:
+        "Consolas",
+        monospace;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 0 20px rgba(255, 10, 84, 0.15);
+
+    text-shadow:
+        0 0 8px #ff0a54;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 800px) {
+
+    .hud {
+        padding: 22px;
+    }
+
+    .title {
+        top: 22px;
+        left: 22px;
+
+        font-size: 15px;
+    }
+
+    .status {
+        top: 24px;
+        right: 22px;
+
+        font-size: 8px;
+    }
+
+    .telemetry {
+        top: 110px;
+        left: 22px;
+
+        max-width: 80vw;
+
+        font-size: 9px;
+
+        gap: 4px;
+    }
+
+    .controls {
+        left: 22px;
+        bottom: 20px;
+
+        max-width: 90vw;
+
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================
+   TELAS PEQUENAS
+========================================= */
+
+@media (max-width: 500px) {
+
+    .telemetry {
+        top: 90px;
+
+        font-size: 7px;
+    }
+
+    .controls {
+        font-size: 7px;
+    }
+
+    .status {
+        display: none;
+    }
+}
